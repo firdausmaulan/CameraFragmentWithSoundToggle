@@ -30,6 +30,6 @@ ext {
     sdk = 25
     buildTools = "25.0.0" //keep 25.0.0 for Continuous Integration
     minSdk = 10
-    libraryVersion = "1.0.10"
+    libraryVersion = "1.0.8.1"
     supportVersion = "25.0.0"
 }

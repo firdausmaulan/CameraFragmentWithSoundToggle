@@ -25,17 +25,17 @@ task wrapper(type: Wrapper) {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'CameraFragment'
-    orgName = 'florent37'
+    bintrayName = 'CameraFragmentWithSoundToggle'
+    orgName = 'Murkoto'
 
-    publishedGroupId = 'com.github.florent37'
-    libraryName = 'CameraFragment'
-    artifact = 'camerafragment'
+    publishedGroupId = 'com.github.Murkoto'
+    libraryName = 'CameraFragmentWithSoundToggle'
+    artifact = 'camerafragmentwithsoundtoggle'
 
-    libraryDescription = 'CameraFragment'
+    libraryDescription = 'CameraFragmentWithSoundToggle'
 
-    siteUrl = 'https://github.com/florent37/CameraFragment'
-    gitUrl = 'https://github.com/florent37/CameraFragment.git'
+    siteUrl = 'https://github.com/Murkoto/CameraFragmentWithSoundToggle'
+    gitUrl = 'https://github.com/Murkoto/CameraFragmentWithSoundToggle.git'
 
     libraryVersion = rootProject.ext.libraryVersion
 

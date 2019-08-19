@@ -34,4 +34,6 @@ public interface CameraFragmentApi {
 
     void setResultListener(CameraFragmentResultListener cameraFragmentResultListener);
 
+    void setSound(boolean isSound);
+
 }

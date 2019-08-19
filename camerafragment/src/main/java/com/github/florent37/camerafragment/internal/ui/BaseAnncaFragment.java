@@ -68,6 +68,8 @@ public abstract class BaseAnncaFragment<CameraId> extends Fragment implements Ca
     protected CharSequence[] photoQualities;
     protected AspectFrameLayout previewContainer;
 
+    protected Boolean isSound;
+
     protected ConfigurationProvider configurationProvider;
     @Configuration.MediaQuality
     protected int newQuality = -1;
@@ -607,7 +609,9 @@ public abstract class BaseAnncaFragment<CameraId> extends Fragment implements Ca
 
     protected void takePhoto(CameraFragmentResultListener callback, @Nullable String directoryPath, @Nullable String fileName) {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-            new MediaActionSound().play(MediaActionSound.SHUTTER_CLICK);
+            if (isSound) {
+                new MediaActionSound().play(MediaActionSound.SHUTTER_CLICK);
+            }
         }
         setRecordState(Record.TAKE_PHOTO_STATE);
         this.cameraController.takePhoto(callback, directoryPath, fileName);
@@ -618,7 +622,9 @@ public abstract class BaseAnncaFragment<CameraId> extends Fragment implements Ca
 
     protected void startRecording(@Nullable String directoryPath, @Nullable String fileName) {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-            new MediaActionSound().play(MediaActionSound.START_VIDEO_RECORDING);
+            if (isSound) {
+                new MediaActionSound().play(MediaActionSound.START_VIDEO_RECORDING);
+            }
         }
 
         setRecordState(Record.RECORD_IN_PROGRESS_STATE);
@@ -631,7 +637,9 @@ public abstract class BaseAnncaFragment<CameraId> extends Fragment implements Ca
 
     protected void stopRecording(CameraFragmentResultListener callback) {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-            new MediaActionSound().play(MediaActionSound.STOP_VIDEO_RECORDING);
+            if (isSound) {
+                new MediaActionSound().play(MediaActionSound.STOP_VIDEO_RECORDING);
+            }
         }
 
         setRecordState(Record.READY_FOR_RECORD_STATE);
@@ -763,4 +771,5 @@ public abstract class BaseAnncaFragment<CameraId> extends Fragment implements Ca
     public void setResultListener(CameraFragmentResultListener cameraFragmentResultListener) {
         this.cameraFragmentResultListener = cameraFragmentResultListener;
     }
+
 }

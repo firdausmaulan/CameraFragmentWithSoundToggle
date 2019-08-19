@@ -12,4 +12,9 @@ public class CameraFragment extends BaseAnncaFragment {
     public static CameraFragment newInstance(Configuration configuration) {
         return (CameraFragment) BaseAnncaFragment.newInstance(new CameraFragment(), configuration);
     }
+
+    @Override
+    public void setSound(boolean isSound) {
+        this.isSound = isSound;
+    }
 }

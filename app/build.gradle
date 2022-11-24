@@ -1,20 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion project.sdk
-    buildToolsVersion project.buildTools
-
+    compileSdkVersion 33
     defaultConfig {
-        minSdkVersion project.minSdk
-        targetSdkVersion project.sdk
-
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:" + project.supportVersion
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile project(':camerafragment')
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation project(':camerafragment')
 }

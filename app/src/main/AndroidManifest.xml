@@ -29,7 +29,8 @@
         <activity
             android:name="com.github.florent37.camerafragment.sample.CameraFragmentMainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/ThemeFullscreen" >
+            android:theme="@style/ThemeFullscreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
